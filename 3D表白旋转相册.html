@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D表白旋转相册</title>
+</head>
+<style>
+   *{
+       padding:0px;
+       margin:0px;
+   }
+   body{
+       height:100%;
+   }
+   
+   body{
+     /*  background-size:100% 100%;按容器比列撑满,图片变形 */
+    background-image:url("images/3.png") 
+    /* background-size:100% 100%; */
+   }
+   #box{
+       width:280px;
+       height:400px;
+       /*生成绝对定位的元素 */
+       position:fixed;
+       left:0px;
+       right:0px;
+       top:0;
+       bottom:0px;
+       /* 元素水平居中 */
+       margin:auto;
+       /*指定嵌套元素,在3D空间中呈现 */
+       transform-style:preserve-3d;
+       /* 设置X,Y的旋转点 */
+       transform:rotateX(0deg) rotateY(0deg);
+       /* 动画时长:   45s infinite 循环播放 每45s默认循环播放一次  
+       infinite 循环播放     linear 默认循环一次 */
+       animation: go 45s linear infinite;
+   }
+   #box img{
+       width:280px;
+       height:400px;
+       /*绝对定位 */
+       position:absolute;
+       left:0px;
+       top:0px;
+   }
+   #box img:nth-child(1){
+       transform:rotateY(0deg) translateZ(650px);
+   }
+   #box img:nth-child(2){
+       transform:rotateY(36deg) translateZ(650px);
+   }
+   #box img:nth-child(3){
+       transform:rotateY(72deg) translateZ(650px);
+   }
+   #box img:nth-child(4){
+       transform:rotateY(108deg) translateZ(650px);
+   }
+   #box img:nth-child(5){
+       transform:rotateY(144deg) translateZ(650px);
+   }
+   #box img:nth-child(6){
+       transform:rotateY(216deg) translateZ(650px);
+   }
+   #box img:nth-child(7){
+       transform:rotateY(288deg) translateZ(650px);
+   }
+   #box img:nth-child(8){
+       transform:rotateY(324deg) translateZ(650px);
+   }
+   @keyframes go{
+       0%{
+           transform:rotateX(0deg) rotateY(0deg);
+       }
+       25%{
+           transform:rotateX(20deg) rotateY(180deg);
+       }
+       50%{
+           transform:rotateX(0deg) rotateY(360deg);
+       }
+       75%{
+           transform:rotateX(0deg) rotateY(540deg);
+       }
+       100%{
+           transform:rotateX(0deg) rotateY(720deg);
+       }
+   }
+</style>
+<body>
+   <!-- 放置图片的容器 -->
+    <div id="box">
+    <img src="images/1.png"alt="">
+    <img src="images/2.png"alt="">
+    <img src="images/3.png"alt="">  
+    <img src="images/4.png"alt="">
+    <img src="images/5.png"alt="">
+    <img src="images/6.png"alt="">
+    <img src="images/7.png"alt="">
+    <img src="images/8.png"alt="">
+    </div>
+</body>
+</html>
